@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b14">
+<title>AniFlix — Comunidad Anime</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0b14;--surface:#131321;--surface2:#1b1b2d;--line:#292940;--text:#f5f3ff;--muted:#a5a2ba;--purple:#9b6bff;--pink:#ec68cb;--gold:#ffc65c;--green:#65d6a4;--shadow:0 18px 50px #0005}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% -10%,#29174c 0,transparent 38%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.topbar{height:68px;position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:22px;padding:0 max(20px,calc((100vw - 1320px)/2));background:#0b0b14eF;border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}.brand{display:flex;align-items:center;gap:9px;font-weight:900;font-size:25px;letter-spacing:-1px;white-space:nowrap}.brand-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--purple),var(--pink));box-shadow:0 5px 22px #9b6bff55}.brand span:last-child{color:#c6aaff}.search-wrap{position:relative;flex:1;max-width:560px}.search-wrap span{position:absolute;left:14px;top:9px;color:var(--muted)}.search{width:100%;height:40px;padding:0 15px 0 40px;border:1px solid var(--line);border-radius:13px;background:var(--surface);color:var(--text);outline:none}.search:focus,.field:focus,.textarea:focus{border-color:var(--purple);box-shadow:0 0 0 3px #9b6bff22}.top-actions{margin-left:auto;display:flex;align-items:center;gap:10px}.icon-btn,.btn{border:1px solid var(--line);border-radius:11px;background:var(--surface2);color:var(--text);padding:9px 13px}.icon-btn{width:40px;height:40px;padding:0}.btn-primary{border:0;background:linear-gradient(110deg,#8655f4,#c05bdc);color:white;font-weight:750;box-shadow:0 7px 22px #9b6bff33}.btn:hover,.icon-btn:hover{filter:brightness(1.15)}.layout{width:min(1320px,100%);margin:26px auto;padding:0 20px;display:grid;grid-template-columns:220px minmax(0,680px) 270px;gap:22px;align-items:start}.sidebar,.rightbar{position:sticky;top:90px}.card{background:linear-gradient(145deg,#171726,#12121e);border:1px solid var(--line);border-radius:17px;padding:17px;box-shadow:var(--shadow);margin-bottom:16px}.nav{display:grid;gap:5px}.nav button{border:0;text-align:left;background:transparent;color:var(--muted);padding:11px 12px;border-radius:10px;font-weight:650}.nav button.active,.nav button:hover{background:#33244d;color:#fff}.nav .nav-icon{display:inline-block;width:27px}.side-title{margin:4px 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}.community-link{display:flex;align-items:center;gap:9px;padding:8px 3px;color:#d8d4e7;font-size:14px}.dot{width:9px;height:9px;border-radius:50%;background:var(--purple)}.hero{position:relative;overflow:hidden;padding:26px;border:1px solid #5c3b8c;border-radius:20px;background:linear-gradient(115deg,#32185d,#211735 58%,#4b2055);margin-bottom:17px}.hero:after{content:"✦";position:absolute;right:28px;top:-25px;font-size:150px;color:#fff1;transform:rotate(15deg)}.eyebrow{font-size:11px;letter-spacing:1.5px;font-weight:800;color:#dfcaff}.hero h1{font-size:clamp(25px,4vw,36px);line-height:1.1;margin:10px 0}.hero p{max-width:480px;color:#e3d9f5;margin:0 0 17px}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{display:inline-flex;align-items:center;gap:5px;padding:5px 9px;border:1px solid #ffffff22;border-radius:99px;background:#ffffff12;color:#e9ddff;font-size:12px}.composer-head{display:flex;gap:11px;align-items:center;margin-bottom:13px}.avatar{width:42px;height:42px;flex:0 0 42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#9b6bff,#e866c8);font-weight:850;color:white}.muted{color:var(--muted);font-size:13px}.field,.textarea{width:100%;background:#0e0e19;border:1px solid var(--line);border-radius:11px;color:var(--text);padding:11px 12px;outline:none}.textarea{min-height:100px;resize:vertical}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:9px 0}.form-grid .wide{grid-column:1/-1}.form-actions{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px}.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:19px 2px 12px}.section-head h2{font-size:18px;margin:0}.select{background:var(--surface);border:1px solid var(--line);border-radius:10px;color:var(--text);padding:8px}.post{padding:18px;margin-bottom:14px}.post-top{display:flex;align-items:center;gap:10px}.post-user{font-weight:750}.post-meta{font-size:12px;color:var(--muted)}.post-menu{margin-left:auto;position:relative}.post-menu summary{list-style:none;cursor:pointer;color:var(--muted);padding:5px 9px}.post-menu summary::-webkit-details-marker{display:none}.menu-pop{position:absolute;right:0;top:30px;z-index:5;min-width:145px;padding:6px;background:#25243a;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.menu-pop button{display:block;width:100%;border:0;background:none;color:var(--text);text-align:left;padding:8px;border-radius:7px}.menu-pop button:hover{background:#393653}.post-title{font-size:18px;font-weight:800;margin:14px 0 6px}.post-text{white-space:pre-wrap;overflow-wrap:anywhere;color:#e5e2ef}.post-image{display:block;width:100%;max-height:430px;object-fit:cover;border-radius:13px;margin-top:13px;border:1px solid var(--line)}.post-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.tag{font-size:11px;color:#d9c5ff;background:#35244f;border-radius:7px;padding:4px 8px}.rating-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;padding:11px;background:#10101b;border:1px solid #25253a;border-radius:12px}.stars{display:flex;gap:2px}.star{border:0;background:none;color:#514d61;font-size:23px;padding:0 1px;line-height:1}.star.on,.star:hover{color:var(--gold)}.rating-number{font-weight:800;color:var(--gold)}.post-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px}.action{border:1px solid transparent;background:transparent;color:var(--muted);border-radius:9px;padding:7px 10px}.action:hover{background:var(--surface2);color:white}.action.liked{color:#ff7cae}.comments{border-top:1px solid var(--line);margin-top:13px;padding-top:12px}.comment{display:flex;gap:9px;padding:9px 0}.comment .avatar{width:30px;height:30px;flex-basis:30px;font-size:12px}.comment-body{flex:1;background:#1a1a2a;border-radius:10px;padding:8px 10px;min-width:0}.comment-name{font-weight:750;font-size:13px}.comment-text{overflow-wrap:anywhere;font-size:14px}.comment-form{display:flex;gap:8px;margin-top:10px}.comment-form input{flex:1;min-width:0}.empty{text-align:center;padding:35px 15px;color:var(--muted)}.empty strong{display:block;color:var(--text);font-size:17px;margin-bottom:5px}.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#10101b;border:1px solid var(--line);padding:12px;border-radius:12px}.stat strong{display:block;font-size:23px;color:#c5a5ff}.trend{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid #292940}.trend:last-child{border:0}.trend-num{font-weight:900;color:#b68cff}.trend small{display:block;color:var(--muted)}.profile-line{display:flex;align-items:center;gap:12px}.notice{font-size:12px;color:var(--muted);line-height:1.6}.footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 10px}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:50;background:#28213d;border:1px solid #60428e;padding:11px 17px;border-radius:12px;box-shadow:var(--shadow);display:none;max-width:90vw}.modal-backdrop{position:fixed;inset:0;background:#000a;z-index:40;display:none;place-items:center;padding:15px}.modal{width:min(440px,100%);background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}.modal h3{margin-top:0}.modal .field{margin:7px 0}.mobile-nav{display:none}
+@media(max-width:1050px){.layout{grid-template-columns:190px minmax(0,1fr)}.rightbar{display:none}}
+@media(max-width:700px){.topbar{height:60px;padding:0 12px;gap:10px}.brand{font-size:21px}.search-wrap{max-width:none}.top-actions .desktop{display:none}.layout{display:block;padding:0 12px;margin:15px auto}.sidebar{display:none}.hero{padding:22px}.post{padding:14px}.mobile-nav{display:flex;position:sticky;bottom:0;z-index:15;justify-content:space-around;background:#11111dee;border-top:1px solid var(--line);padding:8px 4px env(safe-area-inset-bottom)}.mobile-nav button{border:0;background:none;color:var(--muted);font-size:11px;display:grid;gap:2px;justify-items:center}.mobile-nav button.active{color:#c7a5ff}.mobile-nav b{font-size:19px}.form-grid{grid-template-columns:1fr}.form-grid .wide{grid-column:auto}.form-actions{align-items:flex-start;flex-direction:column}.section-head{align-items:flex-start}.brand-mark{width:30px;height:30px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" aria-label="AniFlix inicio"><span class="brand-mark">✦</span>Ani<span>Flix</span></a>
+  <div class="search-wrap"><span>⌕</span><input id="search" class="search" type="search" placeholder="Buscar anime, reseñas o usuarios..." aria-label="Buscar"></div>
+  <div class="top-actions"><button class="icon-btn desktop" id="profileBtn" title="Mi perfil">☺</button><button class="btn btn-primary" id="openComposer">＋ Publicar</button></div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <section class="card">
+      <nav class="nav" id="mainNav">
+        <button class="active" data-filter="all"><span class="nav-icon">⌂</span>Inicio</button>
+        <button data-filter="review"><span class="nav-icon">★</span>Reseñas</button>
+        <button data-filter="discussion"><span class="nav-icon">☷</span>Debates</button>
+        <button data-filter="recommend"><span class="nav-icon">✧</span>Recomendaciones</button>
+        <button data-filter="news"><span class="nav-icon">◉</span>Noticias</button>
+      </nav>
+    </section>
+    <section class="card">
+      <h3 class="side-title">Explorar etiquetas</h3>
+      <a class="community-link" href="#" data-tag="Shonen"><i class="dot"></i># Shonen</a>
+      <a class="community-link" href="#" data-tag="Romance"><i class="dot" style="background:#ec68cb"></i># Romance</a>
+      <a class="community-link" href="#" data-tag="Isekai"><i class="dot" style="background:#65d6a4"></i># Isekai</a>
+      <a class="community-link" href="#" data-tag="Manga"><i class="dot" style="background:#ffc65c"></i># Manga</a>
+    </section>
+    <section class="card">
+      <h3 class="side-title">Reglas de AniFlix</h3>
+      <p class="notice">1. Respeta a otros fans.<br>2. Advierte los spoilers.<br>3. No publiques spam ni acoso.<br>4. Comparte contenido que tengas derecho a usar.</p>
+    </section>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">✦ TU UNIVERSO OTAKU</div>
+      <h1>El anime se vive<br>mejor en comunidad.</h1>
+      <p>Descubre historias, publica reseñas, debate con otros fans y califica tus animes favoritos con cinco estrellas.</p>
+      <div class="chips"><span class="chip">★ Reseñas</span><span class="chip">☷ Debates</span><span class="chip">♡ Comunidad</span></div>
+    </section>
+
+    <section class="card" id="composer">
+      <div class="composer-head"><div class="avatar" id="composerAvatar">A</div><div><strong>Comparte con la comunidad</strong><div class="muted">¿Qué anime tienes en mente hoy?</div></div></div>
+      <form id="postForm">
+        <input class="field" id="postTitle" maxlength="100" placeholder="Título de tu publicación (opcional)">
+        <textarea class="textarea" id="postText" maxlength="3000" required placeholder="Escribe tu reseña, opinión o recomendación..."></textarea>
+        <div class="form-grid">
+          <input class="field" id="animeName" maxlength="80" placeholder="Nombre del anime o manga">
+          <select class="field" id="postType" aria-label="Tipo de publicación">
+            <option value="discussion">☷ Debate</option><option value="review">★ Reseña</option><option value="recommend">✧ Recomendación</option><option value="news">◉ Noticia</option>
+          </select>
+          <input class="field wide" id="imageUrl" type="url" placeholder="URL de imagen (opcional, https://...)">
+        </div>
+        <div class="form-actions"><span class="muted">Sé claro, evita spoilers sin avisar y respeta a los demás.</span><button class="btn btn-primary" type="submit">Publicar ✦</button></div>
+      </form>
+    </section>
+
+    <div class="section-head"><h2 id="feedHeading">Publicaciones recientes</h2><select class="select" id="sort" aria-label="Ordenar publicaciones"><option value="new">Más recientes</option><option value="popular">Más populares</option><option value="rated">Mejor calificadas</option></select></div>
+    <section id="feed" aria-live="polite"></section>
+    <section class="card" id="profilePanel" hidden></section>
+    <div class="footer">© <span id="year"></span> AniFlix · Hecho para fans del anime.<br>Prototipo local: los datos se guardan en este navegador.</div>
+  </main>
+
+  <aside class="rightbar">
+    <section class="card"><h3 class="side-title">La comunidad</h3><div class="stat-grid"><div class="stat"><strong id="postCount">0</strong><span class="muted">Publicaciones</span></div><div class="stat"><strong id="commentCount">0</strong><span class="muted">Comentarios</span></div></div></section>
+    <section class="card"><h3 class="side-title">Lo más activo</h3><div id="trends"></div></section>
+    <section class="card"><h3 class="side-title">Tu perfil</h3><div class="profile-line"><div class="avatar" id="sideAvatar">A</div><div><strong id="sideName">Fan de AniFlix</strong><div class="muted">Miembro de la comunidad</div></div></div><button class="btn" id="editProfile" style="width:100%;margin-top:13px">Editar perfil</button></section>
+    <section class="card"><h3 class="side-title">Consejo otaku</h3><p class="notice">Una buena reseña cuenta qué te hizo sentir una historia, sin revelar sus mejores sorpresas.</p></section>
+  </aside>
+</div>
+
+<nav class="mobile-nav" id="mobileNav"><button class="active" data-filter="all"><b>⌂</b>Inicio</button><button data-filter="review"><b>★</b>Reseñas</button><button data-filter="discussion"><b>☷</b>Debates</button><button id="mobileProfile"><b>☺</b>Perfil</button></nav>
+<div class="toast" id="toast" role="status"></div>
+<div class="modal-backdrop" id="profileModal" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+  <div class="modal"><h3 id="profileTitle">Tu perfil AniFlix</h3><label class="muted" for="nameInput">Nombre público</label><input class="field" id="nameInput" maxlength="30" placeholder="Tu nombre"><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><button class="btn" id="cancelProfile">Cancelar</button><button class="btn btn-primary" id="saveProfile">Guardar</button></div></div>
+</div>
+
+<script>
+(() => {
+'use strict';
+const STORAGE_KEY='aniflix.v2.posts';
+const PROFILE_KEY='aniflix.v2.profile';
+const $=id=>document.getElementById(id);
+const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const safeUrl=value=>{try{const url=new URL(value);return ['https:','http:'].includes(url.protocol)?url.href:'';}catch{return '';}};
+const uid=()=>globalThis.crypto?.randomUUID?.()||`${Date.now()}-${Math.random().toString(16).slice(2)}`;
+const ago=timestamp=>{const diff=Math.max(0,Date.now()-timestamp),mins=Math.floor(diff/60000);if(mins<1)return 'ahora';if(mins<60)return `hace ${mins} min`;const hours=Math.floor(mins/60);if(hours<24)return `hace ${hours} h`;return new Date(timestamp).toLocaleDateString('es-ES');};
+const seed=[
+{id:'demo-1',user:'Kira',title:'¿Cuál es el mejor arco de One Piece?',text:'Quiero conocer sus opiniones. Para mí, Marineford sigue siendo uno de los momentos más impactantes. ¿Cuál elegirían ustedes?',anime:'One Piece',type:'discussion',image:'',createdAt:Date.now()-3600000,likes:8,likedBy:[],ratings:{},comments:[{id:'c1',user:'Mika',text:'Enies Lobby tiene un lugar especial para mí.',createdAt:Date.now()-1800000}]},
+{id:'demo-2',user:'Senpai',title:'Reseña: una historia que emociona',text:'Me encanta cuando un anime desarrolla bien a sus personajes y consigue que sus decisiones tengan consecuencias. ¿Qué serie les ha hecho sentir así?',anime:'Frieren',type:'review',image:'',createdAt:Date.now()-7200000,likes:15,likedBy:[],ratings:{demo:'5'},comments:[]}
+];
+let profile=loadProfile(),posts=loadPosts(),filter='all',tagFilter='';
+function loadProfile(){try{return {...{name:'Fan de AniFlix'},...JSON.parse(localStorage.getItem(PROFILE_KEY)||'{}')};}catch{return {name:'Fan de AniFlix'};}}
+function loadPosts(){try{const data=JSON.parse(localStorage.getItem(STORAGE_KEY));return Array.isArray(data)?data:seed;}catch{return seed;}}
+function persist(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(posts));localStorage.setItem(PROFILE_KEY,JSON.stringify(profile));}catch{toast('No se pudo guardar. Revisa el espacio del navegador.');}}
+function toast(message){const el=$('toast');el.textContent=message;el.style.display='block';clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.style.display='none',2400);}
+function initials(name){return escapeHTML((name.trim()[0]||'A').toUpperCase());}
+function average(post){const values=Object.values(post.ratings||{}).map(Number).filter(n=>Number.isInteger(n)&&n>=1&&n<=5);return values.length?values.reduce((a,b)=>a+b,0)/values.length:0;}
+function render(){
+ const search=$('search').value.trim().toLocaleLowerCase();
+ let list=posts.filter(p=>(filter==='all'||p.type===filter)&&(!tagFilter||(p.anime||'').toLocaleLowerCase().includes(tagFilter.toLocaleLowerCase())||(p.text||'').toLocaleLowerCase().includes(tagFilter.toLocaleLowerCase()))&&[p.title,p.text,p.anime,p.user].join(' ').toLocaleLowerCase().includes(search));
+ const sort=$('sort').value;
+ if(sort==='popular')list.sort((a,b)=>(b.likes||0)-(a.likes||0));
+ else if(sort==='rated')list.sort((a,b)=>average(b)-average(a));
+ else list.sort((a,b)=>b.createdAt-a.createdAt);
+ $('feedHeading').textContent=filter==='all'?'Publicaciones recientes':({review:'Reseñas',discussion:'Debates',recommend:'Recomendaciones',news:'Noticias'}[filter]||'Publicaciones');
+ $('feed').innerHTML='';
+ if(!list.length){$('feed').innerHTML='<div class="card empty"><strong>No encontramos publicaciones</strong>Prueba otra búsqueda o publica la primera.</div>';}
+ list.forEach(p=>$('feed').appendChild(makePost(p)));
+ updateStats();renderTrends();
+}
+function makePost(p){
+ const article=document.createElement('article');article.className='card post';
+ const typeLabel={review:'★ Reseña',discussion:'☷ Debate',recommend:'✧ Recomendación',news:'◉ Noticia'}[p.type]||'Publicación';
+ const ratings=p.ratings||{},myRating=Number(ratings[profile.name]||0),avg=average(p),ratingCount=Object.keys(ratings).length;
+ const stars=[1,2,3,4,5].map(n=>`<button class="star ${n<=myRating?'on':''}" data-rate="${n}" aria-label="Calificar con ${n} estrellas" title="${n} estrellas">★</button>`).join('');
+ const image=safeUrl(p.image);
+ const comments=(p.comments||[]).map(c=>`<div class="comment"><div class="avatar">${initials(c.user)}</div><div class="comment-body"><div class="comment-name">${escapeHTML(c.user)} <span class="post-meta">· ${ago(c.createdAt)}</span></div><div class="comment-text">${escapeHTML(c.text)}</div></div></div>`).join('');
+ const liked=(p.likedBy||[]).includes(profile.name);
+ article.innerHTML=`
+  <div class="post-top"><div class="avatar">${initials(p.user)}</div><div><div class="post-user">${escapeHTML(p.user)}</div><div class="post-meta">${typeLabel} · ${ago(p.createdAt)}</div></div>
+  <details class="post-menu"><summary aria-label="Opciones">•••</summary><div class="menu-pop"><button data-action="report">⚑ Reportar</button>${p.user===profile.name?'<button data-action="delete">Eliminar publicación</button>':''}</div></details></div>
+  ${p.title?`<div class="post-title">${escapeHTML(p.title)}</div>`:''}
+  ${p.anime?`<div class="post-tags"><span class="tag">🎬 ${escapeHTML(p.anime)}</span></div>`:''}
+  <div class="post-text">${escapeHTML(p.text)}</div>
+  ${image?`<img class="post-image" src="${escapeHTML(image)}" alt="Imagen compartida por ${escapeHTML(p.user)}" loading="lazy" referrerpolicy="no-referrer">`:''}
+  <div class="rating-row"><div><div class="muted">Califica esta publicación</div><div class="stars">${stars}</div></div><div><div class="rating-number">${avg?avg.toFixed(1)+' / 5':'Sin votos'}</div><div class="muted">${ratingCount} ${ratingCount===1?'voto':'votos'}</div></div></div>
+  <div class="post-actions"><button class="action ${liked?'liked':''}" data-action="like">${liked?'♥':'♡'} Me gusta · ${p.likes||0}</button><button class="action" data-action="comments">▢ Comentar · ${(p.comments||[]).length}</button><button class="action" data-action="share">↗ Compartir</button></div>
+  <div class="comments"><div class="muted">Conversación</div>${comments||'<p class="muted">Todavía no hay comentarios. ¡Inicia la conversación!</p>'}
+   <form class="comment-form"><input class="field" name="comment" maxlength="500" required placeholder="Escribe un comentario..." aria-label="Escribe un comentario"><button class="btn btn-primary" type="submit">Enviar</button></form>
+  </div>`;
+ article.querySelectorAll('[data-rate]').forEach(btn=>btn.addEventListener('click',()=>rate(p.id,Number(btn.dataset.rate))));
+ article.querySelector('[data-action="like"]').addEventListener('click',()=>like(p.id));
+ article.querySelector('[data-action="comments"]').addEventListener('click',()=>article.querySelector('[name="comment"]').focus());
+ article.querySelector('[data-action="share"]').addEventListener('click',()=>share(p));
+ article.querySelector('[data-action="report"]').addEventListener('click',()=>toast('Gracias. La función de moderación se conectará en la versión con servidor.'));
+ const del=article.querySelector('[data-action="delete"]');if(del)del.addEventListener('click',()=>deletePost(p.id));
+ article.querySelector('.comment-form').addEventListener('submit',e=>{e.preventDefault();addComment(p.id,new FormData(e.currentTarget).get('comment'));});
+ return article;
+}
+function rate(id,value){const p=posts.find(x=>x.id===id);if(!p)return;p.ratings=p.ratings||{};p.ratings[profile.name]=value;persist();render();toast(`Tu voto de ${value} ${value===1?'estrella':'estrellas'} fue guardado.`);}
+function like(id){const p=posts.find(x=>x.id===id);if(!p)return;p.likedBy=p.likedBy||[];const i=p.likedBy.indexOf(profile.name);if(i>=0){p.likedBy.splice(i,1);p.likes=Math.max(0,(p.likes||0)-1);}else{p.likedBy.push(profile.name);p.likes=(p.likes||0)+1;}persist();render();}
+function addComment(id,value){const text=String(value||'').trim();if(!text)return;const p=posts.find(x=>x.id===id);if(!p)return;p.comments=p.comments||[];p.comments.push({id:uid(),user:profile.name,text,createdAt:Date.now()});persist();render();toast('Comentario publicado.');}
+function deletePost(id){const p=posts.find(x=>x.id===id);if(!p||p.user!==profile.name)return;if(!confirm('¿Seguro que quieres eliminar esta publicación?'))return;posts=posts.filter(x=>x.id!==id);persist();render();toast('Publicación eliminada.');}
+async function share(p){const text=`${p.title||'AniFlix'}\n${p.text}`;try{if(navigator.share)await navigator.share({title:'AniFlix',text});else if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(text);toast('Texto copiado para compartir.');}else toast('Compartir no está disponible en este navegador.');}catch(e){if(e.name!=='AbortError')toast('No se pudo compartir.');}}
+function updateStats(){$('postCount').textContent=posts.length;$('commentCount').textContent=posts.reduce((n,p)=>n+(p.comments||[]).length,0);$('sideName').textContent=profile.name;$('sideAvatar').textContent=initials(profile.name);$('composerAvatar').textContent=initials(profile.name);}
+function renderTrends(){const counts={};posts.forEach(p=>{if(p.anime)counts[p.anime]=(counts[p.anime]||0)+1;});const top=Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,5);$('trends').innerHTML=top.length?top.map(([name,count],i)=>`<div class="trend"><span class="trend-num">#${i+1}</span><div><strong>${escapeHTML(name)}</strong><small>${count} ${count===1?'publicación':'publicaciones'}</small></div></div>`).join(''):'<p class="muted">Las tendencias aparecerán cuando haya publicaciones.</p>';}
+function openProfile(){$('nameInput').value=profile.name;$('profileModal').style.display='grid';$('nameInput').focus();}
+function closeProfile(){$('profileModal').style.display='none';}
+$('postForm').addEventListener('submit',e=>{e.preventDefault();const text=$('postText').value.trim();if(!text){toast('Escribe el contenido de tu publicación.');return;}const imageRaw=$('imageUrl').value.trim(),image=imageRaw?safeUrl(imageRaw):'';if(imageRaw&&!image){toast('Introduce una URL de imagen válida (http o https).');return;}posts.push({id:uid(),user:profile.name,title:$('postTitle').value.trim(),text,anime:$('animeName').value.trim(),type:$('postType').value,image,createdAt:Date.now(),likes:0,likedBy:[],ratings:{},comments:[]});persist();e.currentTarget.reset();filter='all';tagFilter='';setActiveNav('all');render();toast('¡Tu publicación ya está en AniFlix!');});
+function setActiveNav(value){document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter===value));}
+document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{filter=btn.dataset.filter;tagFilter='';setActiveNav(filter);render();window.scrollTo({top:0,behavior:'smooth'});}));
+document.querySelectorAll('[data-tag]').forEach(link=>link.addEventListener('click',e=>{e.preventDefault();tagFilter=link.dataset.tag;$('search').value='';filter='all';setActiveNav('all');render();}));
+$('search').addEventListener('input',render);$('sort').addEventListener('change',render);
+$('openComposer').addEventListener('click',()=>{$('composer').scrollIntoView({behavior:'smooth'});$('postText').focus();});
+$('profileBtn').addEventListener('click',openProfile);$('editProfile').addEventListener('click',openProfile);$('mobileProfile').addEventListener('click',openProfile);
+$('cancelProfile').addEventListener('click',closeProfile);
+$('profileModal').addEventListener('click',e=>{if(e.target===$('profileModal'))closeProfile();});
+$('saveProfile').addEventListener('click',()=>{const name=$('nameInput').value.trim();if(!name){toast('Escribe un nombre para tu perfil.');return;}if(name.length>30){toast('El nombre admite hasta 30 caracteres.');return;}const old=profile.name;profile.name=name;posts.forEach(p=>{if(p.user===old)p.user=name;if(p.likedBy){p.likedBy=p.likedBy.map(n=>n===old?name:n);}if(p.ratings&&Object.hasOwn(p.ratings,old)){p.ratings[name]=p.ratings[old];delete p.ratings[old];} (p.comments||[]).forEach(c=>{if(c.user===old)c.user=name;});});persist();closeProfile();render();toast('Perfil actualizado.');});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProfile();});
+$('year').textContent=new Date().getFullYear();
+render();
+})();
+</script>
+</body>
+</html>
